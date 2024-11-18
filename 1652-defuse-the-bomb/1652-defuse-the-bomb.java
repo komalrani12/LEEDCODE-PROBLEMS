@@ -11,7 +11,7 @@ class Solution {
                     result[i]+=code[(j+n)%n];
                 }
             }else{
-                for(int j=i+1; j<i+k+1; j++){
+                for(int j=i+1; j<=i+k; j++){
                     result[i]+=code[j%n];
                 }
             }
