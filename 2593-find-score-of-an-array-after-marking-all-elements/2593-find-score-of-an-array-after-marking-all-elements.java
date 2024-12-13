@@ -10,11 +10,18 @@ class Solution {
         for(Pair<Integer,Integer>pair:list){
             int smallest=pair.getKey();
             int index=pair.getValue();
-            if((index > 0 && visited[index - 1]) || visited[index] || (index < nums.length - 1 && visited[index + 1])){
-                continue;
-            }
+            if(!visited[index]){
+                score+=smallest;
                 visited[index]=true;
-            score+=smallest;
+            
+            if(index-1>=0){
+                visited[index-1]=true;
+            }
+            if(index+1<nums.length){
+            visited[index+1]=true;
+            }
+                
+        }
         }
     
         return score;
